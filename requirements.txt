@@ -1,0 +1,19 @@
+# -- Deep Learning --
+torch==2.8.0 # For successful torch.compile
+transformers==5.1.0
+tensorboard
+
+# -- MIDI --
+mido
+miditoolkit
+
+# -- Audio (CLaMP 3 reward) --
+torchaudio==2.8.0
+soundfile
+
+# -- Utils --
+parse
+numpy
+pandas
+tqdm
+matplotlib

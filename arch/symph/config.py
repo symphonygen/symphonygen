@@ -1,0 +1,34 @@
+from arch.config import *
+
+CROSS_ATTN_STREAM = 2
+SMALL_SIZE = False
+
+TRACK_NUM = 32 # Covers 98%
+EVENT_NUM = 32
+HARMO_EVENT_NUM = 64 # Covers 98%
+
+if DEBUG_PRETRAIN:
+    HIDDEN_SIZE = 11
+    ENCODER_LAYERS = 1
+    BAR_TRACK_DECODER_LAYERS = 1
+    HARMO_EVENT_DECODER_LAYERS = 1
+    EVENT_DECODER_LAYERS = 1
+else:
+    if SMALL_SIZE:
+        HIDDEN_SIZE = 256
+        ENCODER_LAYERS = 2
+        BAR_TRACK_DECODER_LAYERS = 2
+        HARMO_EVENT_DECODER_LAYERS = 8
+        EVENT_DECODER_LAYERS = 9
+        # 25 layers
+        # 25,171,068
+    else:
+        HIDDEN_SIZE = 512
+        ENCODER_LAYERS = 4
+        BAR_TRACK_DECODER_LAYERS = 4
+        HARMO_EVENT_DECODER_LAYERS = 8
+        EVENT_DECODER_LAYERS = 9
+        # 33 layers
+        # 124,319,612
+
+HEADS = max(1, HIDDEN_SIZE // 64)
