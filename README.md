@@ -3,10 +3,12 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2604.25498-b31b1b.svg)](https://arxiv.org/abs/2604.25498)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-yellow)](https://huggingface.co/SymphonyGen/SymphonyGen)
 [![Demo Page](https://img.shields.io/badge/%F0%9F%8C%90%20Demo-symphonygen.github.io-green)](https://symphonygen.github.io)
+[![SoundCloud](https://img.shields.io/badge/%F0%9F%8E%B5%20SoundCloud-Playlist-orange)](https://soundcloud.com/jack-he-782243984/sets/symphonygen-album)
 
 This repository contains the official implementation of **SymphonyGen**, a 3D hierarchical framework for contemporary cinematic orchestration. SymphonyGen decomposes symphonic scores along the Bar, Track, and Event axes with a cascading decoder architecture, conditions generation on a beat-quantized multi-voice **harmony skeleton** ("short-score" conditioning), refines the model with **GRPO** using a cross-modal audio-perceptual reward (CLaMP 3), and suppresses tonal clashes at inference time with **dissonance-averse sampling**.
 
 - [**🌐 Project Demo Page**](https://symphonygen.github.io) — audio examples for both listening-test rounds (composition and re-orchestration), along with the baseline excerpts (dataset, SymphonyNet, NotaGen, METEOR) used in the subjective tests.
+- [**🎵 SoundCloud Playlist**](https://soundcloud.com/jack-he-782243984/sets/symphonygen-album) — full audio album of SymphonyGen-generated orchestrations.
 - [**🤗 Released checkpoints**](https://huggingface.co/SymphonyGen/SymphonyGen) — all four released models (harmony skeleton model, pretrained 3D model, and both GRPO variants).
 - [**📄 Paper (arXiv)**](https://arxiv.org/abs/2604.25498) — accepted at **ISMIR 2026**.
 
