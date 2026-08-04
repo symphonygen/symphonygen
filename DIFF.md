@@ -25,7 +25,6 @@ This document flags implementation details that are present in the codebase but 
 
 ## Harmony Skeleton
 
-- **High-track-density finetuning of the released 1D model** (`stage_one_finetuned.pt`): the released harmony skeleton model is the pretrained 1D model finetuned (lr 1e-5, gradient accumulation 2) on the subset of 32-bar windows with high full-score track density: windows are kept when the per-bar track count (excluding the harmony track) has 25th percentile ≥ 8 or 75th percentile ≥ 10, and median ≤ 22. The subset indexer and finetuning entry point are not part of the release; finetuning follows the resumed-pretraining recipe of README step 6.
 - **Harmonic Analysis** (`data_prep/harmo_analysis.py`): the extension-identification DP allows deleting notes matched by the template with a penalty λ = 3.0.
 - **Composite skeleton filter** (`rl/reward/harmo_filter.py`, `rl/config.py:RULES_FOR_HARMO_FILTER`): the paper's density/repetition filters are implemented as a weighted score over four signals (density, bar-level loop repetition with periods 1/2/4, beat-level repetition, cadence count) with an acceptance threshold of 3.8.
 - **Two-sided log-probability filter** (`arch/harmo/generator.py:filter_by_log_prob`): skeletons are kept when the per-token loss lies in [0.25, 0.5] — both unusually predictable and unusually surprising skeletons are rejected.
