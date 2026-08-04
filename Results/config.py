@@ -1,6 +1,6 @@
 from arch.config import ASSET_DIR
 
-HARMO_MODEL_PATH = f"{ASSET_DIR}/stage_one_finetuned.pt"
+HARMO_MODEL_PATH = f"{ASSET_DIR}/stage_one_pretrained.pt"
 PRETRAIN_MODEL_PATH = f"{ASSET_DIR}/stage_two_pretrained.pt"
 # Reinforced with the pure CLaMP 3 reward (subjective test round 1)
 GRPO_MODEL_PATH = f"{ASSET_DIR}/grpo_clamp_epoch_10.pt"
