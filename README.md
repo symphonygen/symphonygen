@@ -66,7 +66,7 @@ $ASSET_DIR/
                                                    #    Retrieval Across Unaligned Modalities and
                                                    #    Unseen Languages")
     MuseScore-3.6.2.548021370-x86_64.AppImage      # MuseScore 3.6.2 for MIDI-to-audio rendering
-    stage_one_finetuned.pt                         # harmony skeleton model  (l_12_h_768)
+    stage_one_pretrained.pt                        # harmony skeleton model  (l_12_h_768)
     stage_two_pretrained.pt                        # pretrained 3D model    (l_33_h_512, 2-stream)
     grpo_clamp_epoch_10.pt                         # GRPO with the pure CLaMP 3 reward
     grpo_clamp+track_epoch_6.pt                    # GRPO with the CLaMP 3 + track density reward
@@ -117,7 +117,7 @@ torchrun --nproc_per_node=$(nvidia-smi -L | wc -l) arch/symph/1_pretrain.py $ASS
 
 ```bash
 torchrun --nproc_per_node=$(nvidia-smi -L | wc -l) arch/symph/2_reinforce.py \
-    $ASSET_DIR/stage_one_finetuned.pt \
+    $ASSET_DIR/stage_one_pretrained.pt \
     $ASSET_DIR/stage_two_pretrained.pt
 ```
 
@@ -146,7 +146,7 @@ python arch/symph/generator.py <model.pt> <cond_midi_path_or_dir> \
 Harmony skeletons can also be generated standalone:
 
 ```bash
-python arch/harmo/generator.py $ASSET_DIR/stage_one_finetuned.pt --batch_size 4 --save_dir harmony_out
+python arch/harmo/generator.py $ASSET_DIR/stage_one_pretrained.pt --batch_size 4 --save_dir harmony_out
 ```
 
 ### 9. Reproduce the main results
